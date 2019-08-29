@@ -1,15 +1,11 @@
 <div class="text-center">
-  <h1>ユーザー登録</h1>
+  <h1>ログイン</h1>
 </div>
 
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
 
-    <%= form_with(model:@user, local: true) do |f| %>
-      <div class="form-group">
-        <%= f.label :name , 'Name' %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
       <div class="form-group">
         <%= f.label :email, 'Email' %>
@@ -21,7 +17,7 @@
         <%= f.password_field :password, class: 'form-control' %>
       </div>
 
-      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      <%= f.submit 'Log in', class: 'btn btn-primary btn-block' %>
     <% end %>
 
   </div>
